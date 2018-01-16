@@ -16,6 +16,7 @@
             "include_dirs": [
                 "src",
                 "src/contrib/epee/include",
+                '<!(node -e "require(\'nan\')")'
             ],
             "link_settings": {
                 "libraries": [
@@ -29,6 +30,14 @@
                   "-fexceptions",
                   "-frtti",
             ],
+            'xcode_settings': {
+                'GCC_ENABLE_CPP_RTTI': 'YES',
+                'GCC_ENABLE_EXCEPTIONS': 'YES',
+                'OTHER_CFLAGS': [
+                  '-fexceptions',
+                  '-frtti'
+                ],
+            },
         }
     ]
 }
